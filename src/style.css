@@ -16,3 +16,24 @@ nav {
 .nav--logo {
     max-width: 100px;
 }
+
+section {
+    padding: 20px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+}
+.hero--photo {
+    max-width: 395px;
+    align-self: center;
+}
+.hero--header {
+    padding-left: 16px;
+    margin-bottom: 16px;
+}
+.hero--text {
+    padding-left: 16px;
+    margin-top: 0%;
+}
