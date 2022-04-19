@@ -1,19 +1,20 @@
 import React from "react";
-import katie from "../images/katie.png";
 import star from "../images/star.png";
 
-export default function Card() {
+export default function Card(props) {
+    let photo = require("../images/"+props.img)
     return (
         <div className="card">
-            <img src={katie} alt="Katy Zaferes" className="card--image" />
+            {props.openSpots === 0 && <div className="card--badge">SOLD OUT</div>}
+            <img src={photo} alt="" className="card--image" />
             <div className="card--stats">
                 <img src={star} alt="Star" className="card--star" />
-                <span>5.0</span>
-                <span className="grey">(6) ·</span>
-                <span className="grey">USA</span>
+                <span>{props.rating}</span>
+                <span className="grey"> ({props.reviewCount}) ·</span>
+                <span className="grey">{props.country}</span>
             </div>
-            <p>Life lessons with Katie Zaferes</p>
-            <p><span className="bold">From $136</span> / person</p>
+            <p className="card--title">{props.title} </p>
+            <p className="card--price"><span className="bold">From ${props.price}</span> / person</p>
         </div>
     )
 }
